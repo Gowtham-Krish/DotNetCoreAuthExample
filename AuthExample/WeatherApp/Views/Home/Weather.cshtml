@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Weather Forecast";
+}
+<script>
+        var accessToken = '@TempData["AccessToken"]';
+</script>
+<h1>@ViewData["Title"]</h1>
+
+<p>This is the forecast page.</p>
+
+<button type="submit" id="today">Click for Today's Weather</button>
+
+<button type="submit" id="forecast">Click for Weather Forecast</button>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Todays Weather</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <p id="modalText"></p>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+<table id="table" class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th data-field="date">Date</th>
+            <th data-field="dayOfWeek">Day Of Week</th>
+            <th data-field="temperatureC">Temperature in C</th>
+            <th data-field="temperatureF">Temperature in F</th>
+            <th data-field="summary">Summary</th>
+        </tr>
+    </thead>
+</table>
